@@ -1,1 +1,3 @@
-# Financial-Dashboard
+# Aiva Financial Dashboard
+
+Finansal analiz ve raporlama sistemi.
