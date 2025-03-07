@@ -1,8 +1,10 @@
-# Aiva Financial Dashboard
+# Duftech Financial Dashboard
 
 ## 📊 Finansal Analiz ve Raporlama Sistemi
 
-Aiva Financial Dashboard, işletmeler için kapsamlı bir finansal analiz ve raporlama aracıdır. Bu uygulama, finansal verileri görselleştirme, analiz etme ve tahmin yapma özellikleri sunarak stratejik kararlar almanıza yardımcı olur.
+![Duftech Financial](https://via.placeholder.com/800x400?text=Duftech+Financial+Dashboard)
+
+Duftech Financial Dashboard, işletmeler için kapsamlı bir finansal analiz ve raporlama aracıdır. Bu uygulama, finansal verileri görselleştirme, analiz etme ve tahmin yapma özellikleri sunarak stratejik kararlar almanıza yardımcı olur.
 
 ## 🌟 Özellikler
 
@@ -10,7 +12,9 @@ Aiva Financial Dashboard, işletmeler için kapsamlı bir finansal analiz ve rap
 - **Detaylı Finansal Analiz**: Satış, gider ve karlılık metrikleri için kapsamlı analizler
 - **Piyasa Verileri**: Döviz kurları ve diğer piyasa göstergeleri takibi
 - **Tahminler**: Makine öğrenmesi ile satış ve gider tahminleri
-- **Raporlama**: Özelleştirilmiş raporlar oluşturma ve paylaşma imkanı
+- **Raporlama**: Özelleştirilmiş raporlar oluşturma ve Excel/PDF olarak dışa aktarma
+
+
 
 ## 🚀 Kurulum
 
@@ -23,19 +27,21 @@ Aiva Financial Dashboard, işletmeler için kapsamlı bir finansal analiz ve rap
 ### Adım 1: Projeyi Bilgisayarınıza İndirin
 
 ```bash
-git clone https://github.com/your-username/aiva-financial.git
-cd aiva-financial
+git clone https://github.com/your-username/duftech-financial.git
+cd duftech-financial
 ```
 
 veya ZIP olarak indirip açabilirsiniz.
 
-### Adım 2: Sanal Ortam Oluşturun (Opsiyonel)
+### Adım 2: Sanal Ortam Oluşturun (Opsiyonel ama Önerilen)
 
 ```bash
-python -m venv venv
 # Windows için
+python -m venv venv
 venv\Scripts\activate
+
 # MacOS/Linux için
+python -m venv venv
 source venv/bin/activate
 ```
 
@@ -50,6 +56,8 @@ pip install -r requirements.txt
 ```bash
 streamlit run Home.py
 ```
+
+Uygulama varsayılan olarak `http://localhost:8501` adresinde çalışacaktır.
 
 ## 📊 Kullanım Kılavuzu
 
@@ -95,10 +103,27 @@ streamlit run Home.py
 - Raporları Excel veya PDF formatında dışa aktarma
 - E-posta ile rapor paylaşımı
 
+## 📦 Veri Gereksinimleri
+
+Uygulama, aşağıdaki yapıda bir CSV dosyası ile çalışmaktadır:
+
+- **EBİTTA_EKİM_2022.csv** formatında finansal veri tablosu
+- **Satırlar**: Her bir gider kalemi (örn. PERSONEL MAAŞ & GİDERLERİ, YEMEK GİDERLERİ vb.)
+- **Sütunlar**: Aylar (Ocak, Şubat, Mart...), Genel Toplam, Ortalama, Satış Pay Oranı
+
+Örnek CSV formatı:
+
+```
+Unnamed: 0,ESAS GİDER YERİ,2022-01-01 00:00:00,2022-02-01 00:00:00,...,Genel Toplam,ORTALAMA,X,"SATIŞ PAY ORANI"
+,PERSONEL MAAŞ & GİDERLERİ,332311.08,432625.20,...,6300361.89,630036.19,,4.88764155
+,YEMEK GİDERLERİ,21567.24,28697.59,...,443441.96,44344.20,,0.34400966
+,...
+```
+
 ## 📁 Proje Yapısı
 
 ```
-aiva-financial/
+duftech-financial/
 │
 ├── Home.py                   # Ana sayfa
 ├── main.py                   # Ana uygulama dosyası
@@ -130,23 +155,25 @@ aiva-financial/
     └── predictions.py        # Tahmin modelleri
 ```
 
-## 📈 Veri Gereksinimleri
-
-Uygulama, aşağıdaki şekilde yapılandırılmış bir CSV dosyası ile çalışmaktadır:
-
-- **EBİTTA_EKİM_2022.csv** gibi her satırı bir gider kalemi ve her sütunu bir ayı temsil eden finansal veri tablosu
-- Sütunlar: Gider kalemi, ocak, şubat, mart... aralık, genel toplam, ortalama, satış pay oranı
-- Satırlar: Personel giderleri, malzeme giderleri, finansman giderleri vb.
-
 ## 🛠️ Teknik Detaylar
 
-Aiva Financial Dashboard aşağıdaki teknolojileri kullanmaktadır:
+Duftech Financial Dashboard aşağıdaki teknolojileri kullanmaktadır:
 
 - **Streamlit**: Web arayüzü ve interaktif dashboard
 - **Pandas & NumPy**: Veri manipülasyonu ve analizi
 - **Plotly**: İnteraktif veri görselleştirme
 - **Scikit-learn**: Makine öğrenmesi ile tahmin modelleri
 - **yfinance**: Piyasa verilerine erişim
+
+## 🔍 Veri Analizi
+
+Uygulama, yüklenen finansal verileri otomatik olarak işler ve şunları sunar:
+
+- Aylık ve toplam satış metriklerinin analizi
+- Gider kalemlerinin detaylı dökümü ve kategorilere göre analizi
+- Kar marjı ve karlılık trendleri
+- Gelecek dönem satış, gider ve kar tahminleri
+- Finansal raporlar ve görselleştirmeler
 
 ## 🔮 Planlanan Özellikler
 
@@ -156,6 +183,7 @@ Aiva Financial Dashboard aşağıdaki teknolojileri kullanmaktadır:
 - Daha fazla veri formatı desteği
 - Kullanıcı yetkilendirme sistemi
 - Gerçek zamanlı veri entegrasyonları
+- Otomatik rapor planlama ve gönderme
 
 ## 🤝 Katkıda Bulunma
 
@@ -167,14 +195,18 @@ Projeye katkıda bulunmak isterseniz:
 4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
 5. Pull request oluşturun
 
+## 🐛 Sorun Bildirme
+
+Bir hata bulduysanız veya bir öneriniz varsa, lütfen GitHub Issues üzerinden bildirim yapın.
+
 ## 📄 Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır. Detaylı bilgi için LICENSE dosyasına bakınız.
 
 ## 📞 İletişim
 
-Sorularınız veya önerileriniz için [email@example.com](mailto:email@example.com) adresine e-posta gönderebilirsiniz.
+Sorularınız veya önerileriniz için [info@duftech.com](mailto:info@duftech.com) adresine e-posta gönderebilirsiniz.
 
 ---
 
-Made with ❤️ by Aiva Financial Team
+Made with ❤️ by Duftech Team
